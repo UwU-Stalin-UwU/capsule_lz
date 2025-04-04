@@ -3,13 +3,16 @@
 
 import matplotlib.pyplot as plt
 import pandas as pd
+import capsule as caps
 
 
 class Sonyboys():
+    @caps.logging
     def __init__(self, df):
         self.df = pd.DataFrame()
         self.df = df
 
+    @caps.logging
     def diagramm(self):
         country_counts = self.df['country'].value_counts()
         country_counts = country_counts.to_dict()
